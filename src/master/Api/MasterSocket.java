@@ -29,14 +29,14 @@ public class MasterSocket {
     }
 
     public void execute() throws IOException {
-        /*
-        while ((command = readCommand()) != null) {
-            registerCommand(command);
-            sendResponseToMaster();
-        }*/
+       // FIX:
+        // DEFINE INPUT COMMAND STRUCTURE
+        // SEND COMMAND TO SLAVE
+        // WAIT RESPONSE
+        // DEFINE WHAT TO DO WITH RESPONSE
     }
 
-    private Command readCommand() throws IOException {
+    private Command readResponse() throws IOException {
         Gson gson = new Gson();
         return gson.fromJson(this.reader.readLine(), Command.class);
     }
