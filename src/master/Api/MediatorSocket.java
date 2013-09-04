@@ -1,5 +1,6 @@
 package master.Api;
 
+import master.Model.MasterManager;
 import master.messages.Message;
 import master.messages.MasterResponseMessage;
 import com.google.gson.Gson;
@@ -10,6 +11,7 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import java.net.UnknownHostException;
 import master.Model.Master;
+import master.Model.UnitType;
 
 public class MediatorSocket {
 
@@ -41,17 +43,17 @@ public class MediatorSocket {
      private void waitResponse() throws IOException {
         Gson gson = new Gson();
         MasterResponseMessage masterResponseMessage = gson.fromJson(this.reader.readLine(), MasterResponseMessage.class);
-        this.master.registerResponse(masterResponseMessage);
+        this.master.getMasterManager().registerMediatorResponse(masterResponseMessage);
     }
 
     private void sendHeader() {
         Gson gson = new Gson();
+      //  this.writer.println(gson.toJson(UnitType.MASTER));
         this.writer.println(gson.toJson("MASTER"));
     }
 
     private void sendMasterRequest() {
-        Message request = this.master.getRequest();
         Gson gson = new Gson();
-        this.writer.println(gson.toJson(request));
+        this.writer.println(gson.toJson(this.master.getMasterManager().getRequestForMediator()));
     }   
 }

@@ -1,5 +1,6 @@
 package master.Api;
 
+import master.Model.MasterManager;
 import com.google.gson.Gson;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -8,7 +9,6 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import master.Model.Master;
 import master.command.Command;
-
 
 public class MasterSocket {
 
@@ -29,7 +29,7 @@ public class MasterSocket {
     }
 
     public void execute() throws IOException {
-       // FIX:
+        // FIX:
         // DEFINE INPUT COMMAND STRUCTURE
         // SEND COMMAND TO SLAVE
         // WAIT RESPONSE
@@ -45,4 +45,9 @@ public class MasterSocket {
         Gson gson = new Gson();
         this.writer.println(gson.toJson(command));
     }
+
+    private String readInputCommand() throws IOException {
+        BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));
+        return keyboard.readLine();
+    }   
 }

@@ -1,5 +1,6 @@
 package master.Api;
 
+import master.Model.MasterManager;
 import java.io.IOException;
 import java.net.UnknownHostException;
 import master.Model.Master;
@@ -9,14 +10,14 @@ public class Api {
     private MasterSocket masterSocket;
     private Master master;
 
-    public Api(String ip, int port, Master slave) throws UnknownHostException, IOException {
-        this.mediatorSocket = new MediatorSocket(ip, port, slave);
-        this.master = slave;
+    public Api(String ip, int port, Master master) throws UnknownHostException, IOException {
+        this.master = master;
+        this.mediatorSocket = new MediatorSocket(ip,port,this.master);       
     }
     
     public void start() throws IOException{
         registerChannel();
-        startConnectionWithSlave();
+      //  startConnectionWithSlave();
     } 
 
     private void registerChannel() throws IOException {

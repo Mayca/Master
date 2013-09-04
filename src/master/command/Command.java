@@ -15,8 +15,9 @@ public class Command {
 
     public ArgumentList getArgumentList() {
         return argumentList;
+    }   
+    
+    public int getLength(){
+        return (argumentList.size()+1);
     }
-    
-    
-           
 }
