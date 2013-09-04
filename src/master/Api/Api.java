@@ -1,6 +1,5 @@
 package master.Api;
 
-import master.Model.MasterManager;
 import java.io.IOException;
 import java.net.UnknownHostException;
 import master.Model.Master;

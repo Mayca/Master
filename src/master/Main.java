@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package master;
 
 import java.io.IOException;
@@ -10,10 +6,6 @@ import java.net.UnknownHostException;
 import master.Api.Api;
 import master.Model.Master;
 
-/**
- *
- * @author msanchez
- */
 public class Main {
 
     public static void main(String[] args) throws UnknownHostException, IOException {

@@ -1,6 +1,5 @@
 package master.Api;
 
-import master.Model.MasterManager;
 import com.google.gson.Gson;
 import java.io.BufferedReader;
 import java.io.IOException;
