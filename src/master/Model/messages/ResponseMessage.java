@@ -1,4 +1,4 @@
-package master.messages;
+package master.Model.messages;
 
 public class ResponseMessage extends Message {
     

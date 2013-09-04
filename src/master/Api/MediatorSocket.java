@@ -1,8 +1,8 @@
 package master.Api;
 
 import master.Model.MasterManager;
-import master.messages.Message;
-import master.messages.MasterResponseMessage;
+import master.Model.messages.Message;
+import master.Model.messages.MasterResponseMessage;
 import com.google.gson.Gson;
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -1,13 +1,17 @@
-package master.messages;
+package master.Model.messages;
 
-public class MasterResponseMessage extends ResponseMessage{
+public class MasterRequestMessage extends RequestMessage {
     private String ip;
     private int port;
 
-    public MasterResponseMessage(String channel, String ip, int port) {
+    public MasterRequestMessage(String channel, String ip, int port) {
         super(channel);
         this.ip = ip;
         this.port = port;
+    }
+
+    public String getFmuName() {
+        return channel;
     }
 
     public String getIp() {
@@ -18,5 +22,4 @@ public class MasterResponseMessage extends ResponseMessage{
         return port;
     }
     
-
 }

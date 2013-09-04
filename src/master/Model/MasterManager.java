@@ -1,9 +1,9 @@
 package master.Model;
 
 import master.command.CommandFactory;
-import master.messages.MasterRequestMessage;
-import master.messages.MasterResponseMessage;
-import master.messages.Message;
+import master.Model.messages.MasterRequestMessage;
+import master.Model.messages.MasterResponseMessage;
+import master.Model.messages.Message;
 
 public class MasterManager {
 
